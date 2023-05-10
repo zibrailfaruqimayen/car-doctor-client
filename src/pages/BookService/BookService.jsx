@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const BookService = () => {
   const service = useLoaderData();
@@ -32,6 +33,13 @@ const BookService = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "Thanks",
+            text: "service book successfully",
+          });
+        }
       });
   };
 
