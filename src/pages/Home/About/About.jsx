@@ -6,16 +6,16 @@ const About = () => {
     <div className="hero min-h-screen ">
       <div className="hero-content flex-col lg:flex-row">
         <div className=" lg:w-1/2 relative">
-          <img src={img1} className="w-full rounded-lg " />
+          <img src={img1} className="w-11/12 rounded-lg " />
           <img
             src={img2}
-            className="w-3/4 border-8 border-white absolute left-56 top-1/2 rounded-lg "
+            className="w-3/4 border-8 border-white absolute left-48 top-1/2 rounded-lg "
           />
         </div>
         <div className=" lg:w-1/2 space-y-5 pl-20">
           <h3 className="text-3xl text-[#FF3811] font-bold">About Us</h3>
           <h1 className="text-5xl font-bold">
-            We are qualified & of experience in this field
+            We are qualified <br /> & of experience <br /> in this field
           </h1>
           <p className="py-6">
             There are many variations of passages of Lorem Ipsum available, but
