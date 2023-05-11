@@ -21,11 +21,16 @@ const NavBar = () => {
         <Link to="/about">About</Link>
       </li>
       {user?.email ? (
-        <li>
-          <button onClick={handleLogOut} className="text-[#FF3811]">
-            Log out
-          </button>
-        </li>
+        <>
+          <li>
+            <Link to="/bookings">My Booking</Link>
+          </li>
+          <li>
+            <button onClick={handleLogOut} className="text-[#FF3811]">
+              Log out
+            </button>
+          </li>
+        </>
       ) : (
         <li>
           <Link className="text-[#FF3811]" to="/login">
