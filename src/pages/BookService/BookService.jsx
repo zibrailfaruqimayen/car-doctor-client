@@ -64,7 +64,12 @@ const BookService = () => {
             <label className="label">
               <span className="label-text">Date</span>
             </label>
-            <input type="date" name="date" className="input input-bordered" />
+            <input
+              type="date"
+              required
+              name="date"
+              className="input input-bordered"
+            />
           </div>
           <div className="form-control">
             <label className="label">
