@@ -55,6 +55,7 @@ const BookService = () => {
             <input
               type="text"
               name="name"
+              required
               defaultValue={user?.displayName}
               placeholder="Name"
               className="input input-bordered"
