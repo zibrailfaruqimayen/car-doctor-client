@@ -38,6 +38,7 @@ const SignUp = () => {
                 <input
                   type="text"
                   name="name"
+                  required
                   placeholder="Your Name"
                   className="input input-bordered"
                 />
@@ -49,6 +50,7 @@ const SignUp = () => {
                 <input
                   type="text"
                   name="email"
+                  required
                   placeholder="email"
                   className="input input-bordered"
                 />
@@ -60,6 +62,7 @@ const SignUp = () => {
                 <input
                   type="password"
                   name="password"
+                  required
                   placeholder="Your password"
                   className="input input-bordered"
                 />
