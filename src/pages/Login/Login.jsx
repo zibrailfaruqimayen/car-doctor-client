@@ -15,13 +15,26 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
 
     signIn(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        const loggedUser = {
+          email: user.email,
+        };
+        console.log(loggedUser);
         navigate(from, { replace: true });
+        fetch("http://localhost:5000/jwt", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify(loggedUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("jwt response", data);
+            // Warning: Local storage is not the best (second dest place) to store access token
+            localStorage.setItem("car-access-token", data.token);
+          });
       })
       .catch((error) => console.log(error));
   };
