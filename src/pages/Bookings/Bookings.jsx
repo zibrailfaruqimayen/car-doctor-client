@@ -9,7 +9,7 @@ const Bookings = () => {
   const [bookings, setBookings] = useState([]);
   const navigate = useNavigate();
 
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  const url = `https://car-doctor-server-iota-beige.vercel.app/bookings?email=${user?.email}`;
   useEffect(() => {
     fetch(url, {
       method: "GET",
@@ -39,9 +39,12 @@ const Bookings = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         if (proceed) {
-          fetch(`http://localhost:5000/bookings/${id}`, {
-            method: "DELETE",
-          })
+          fetch(
+            `https://car-doctor-server-iota-beige.vercel.app/bookings/${id}`,
+            {
+              method: "DELETE",
+            }
+          )
             .then((res) => res.json())
             .then((data) => {
               console.log(data);
@@ -59,7 +62,7 @@ const Bookings = () => {
   };
 
   const handleBookingConfirm = (id) => {
-    fetch(`http://localhost:5000/bookings/${id}`, {
+    fetch(`https://car-doctor-server-iota-beige.vercel.app/bookings/${id}`, {
       method: "PATCH",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ status: "confirm" }),
